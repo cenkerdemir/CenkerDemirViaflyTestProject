@@ -13,6 +13,9 @@
 		7817F3BD1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7817F3BB1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld */; };
 		7817F3BF1DAFB60900A8E28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7817F3BE1DAFB60900A8E28E /* Assets.xcassets */; };
 		7817F3C21DAFB60900A8E28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7817F3C01DAFB60900A8E28E /* LaunchScreen.storyboard */; };
+		78C3B9D21DAFD264000DACBF /* StoreInventory.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C3B9D11DAFD264000DACBF /* StoreInventory.json */; };
+		78C3B9D41DAFD4BA000DACBF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3B9D31DAFD4BA000DACBF /* Item.swift */; };
+		78C3B9D61DAFD55A000DACBF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3B9D51DAFD55A000DACBF /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		7817F3BE1DAFB60900A8E28E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7817F3C11DAFB60900A8E28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7817F3C31DAFB60900A8E28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78C3B9D11DAFD264000DACBF /* StoreInventory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StoreInventory.json; sourceTree = "<group>"; };
+		78C3B9D31DAFD4BA000DACBF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		78C3B9D51DAFD55A000DACBF /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +64,13 @@
 			children = (
 				7817F3B41DAFB60900A8E28E /* AppDelegate.swift */,
 				7817F3B61DAFB60900A8E28E /* ViewController.swift */,
+				78C3B9D51DAFD55A000DACBF /* Store.swift */,
+				78C3B9D31DAFD4BA000DACBF /* Item.swift */,
 				7817F3B81DAFB60900A8E28E /* Main.storyboard */,
 				7817F3BE1DAFB60900A8E28E /* Assets.xcassets */,
 				7817F3C01DAFB60900A8E28E /* LaunchScreen.storyboard */,
 				7817F3C31DAFB60900A8E28E /* Info.plist */,
+				78C3B9D11DAFD264000DACBF /* StoreInventory.json */,
 				7817F3BB1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld */,
 			);
 			path = CenkerDemirViaflyTestProject;
@@ -129,6 +138,7 @@
 			files = (
 				7817F3C21DAFB60900A8E28E /* LaunchScreen.storyboard in Resources */,
 				7817F3BF1DAFB60900A8E28E /* Assets.xcassets in Resources */,
+				78C3B9D21DAFD264000DACBF /* StoreInventory.json in Resources */,
 				7817F3BA1DAFB60900A8E28E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C3B9D61DAFD55A000DACBF /* Store.swift in Sources */,
+				78C3B9D41DAFD4BA000DACBF /* Item.swift in Sources */,
 				7817F3B71DAFB60900A8E28E /* ViewController.swift in Sources */,
 				7817F3BD1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld in Sources */,
 				7817F3B51DAFB60900A8E28E /* AppDelegate.swift in Sources */,
@@ -304,6 +316,7 @@
 				7817F3C81DAFB60900A8E28E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
