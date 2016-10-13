@@ -11,9 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var fullItemList: UITableView!
-    
-    let arr = ["ffefejhg jhgjhgjhg jhgjhgjhg jhgjhgj hgjhgjhg", "dfwfwef", "efqwfdwqdew" , "efqwfqwf"]
-    let dict = ["ffefejhg jhgjhgjhg jhgjhgjhg jhgjhgj hgjhgjhg" : 1, "dfwfwef" : 2, "efqwfdwqdew" : 3, "efqwfqwf" : 4]
+    let store = Store.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +30,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return store.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
-        let key = arr[indexPath.row] as String
+        let item : Item = store.items[indexPath.row]
+        let key = item.itemName
         cell.textLabel?.text = key
-        
-        if let value = dict[key] {
-            cell.detailTextLabel?.text = "$" + String(describing: value)
+        cell.detailTextLabel?.text = "$" + String(describing: item.price)
+        // below code can be uncommented to show images
+        switch item.category {
+        case "Men's":
+            cell.imageView?.image = UIImage(named: "men.png")
+            //cell.backgroundColor = UIColor.cyan
+        case "Women's":
+            cell.imageView?.image = UIImage(named: "women.png")
+            //cell.backgroundColor = UIColor.red
+        case "Outerwear":
+            cell.imageView?.image = UIImage(named: "outwear.png")
+            //cell.backgroundColor = UIColor.green
+        default:
+            cell.imageView?.image = UIImage(named: "accessories.png")
+            //cell.backgroundColor = UIColor.gray
         }
         return cell
     }

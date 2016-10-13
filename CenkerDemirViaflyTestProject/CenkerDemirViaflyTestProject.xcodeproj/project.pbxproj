@@ -13,6 +13,10 @@
 		7817F3BD1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7817F3BB1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld */; };
 		7817F3BF1DAFB60900A8E28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7817F3BE1DAFB60900A8E28E /* Assets.xcassets */; };
 		7817F3C21DAFB60900A8E28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7817F3C01DAFB60900A8E28E /* LaunchScreen.storyboard */; };
+		785EBC161DB022B000F50455 /* men.png in Resources */ = {isa = PBXBuildFile; fileRef = 785EBC121DB022B000F50455 /* men.png */; };
+		785EBC171DB022B000F50455 /* women.png in Resources */ = {isa = PBXBuildFile; fileRef = 785EBC131DB022B000F50455 /* women.png */; };
+		785EBC181DB022B000F50455 /* outwear.png in Resources */ = {isa = PBXBuildFile; fileRef = 785EBC141DB022B000F50455 /* outwear.png */; };
+		785EBC191DB022B000F50455 /* accessories.png in Resources */ = {isa = PBXBuildFile; fileRef = 785EBC151DB022B000F50455 /* accessories.png */; };
 		78C3B9D21DAFD264000DACBF /* StoreInventory.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C3B9D11DAFD264000DACBF /* StoreInventory.json */; };
 		78C3B9D41DAFD4BA000DACBF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3B9D31DAFD4BA000DACBF /* Item.swift */; };
 		78C3B9D61DAFD55A000DACBF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3B9D51DAFD55A000DACBF /* Store.swift */; };
@@ -27,6 +31,10 @@
 		7817F3BE1DAFB60900A8E28E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7817F3C11DAFB60900A8E28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7817F3C31DAFB60900A8E28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		785EBC121DB022B000F50455 /* men.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = men.png; path = images/men.png; sourceTree = "<group>"; };
+		785EBC131DB022B000F50455 /* women.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = women.png; path = images/women.png; sourceTree = "<group>"; };
+		785EBC141DB022B000F50455 /* outwear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = outwear.png; path = images/outwear.png; sourceTree = "<group>"; };
+		785EBC151DB022B000F50455 /* accessories.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = accessories.png; path = images/accessories.png; sourceTree = "<group>"; };
 		78C3B9D11DAFD264000DACBF /* StoreInventory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StoreInventory.json; sourceTree = "<group>"; };
 		78C3B9D31DAFD4BA000DACBF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		78C3B9D51DAFD55A000DACBF /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -72,8 +80,20 @@
 				7817F3C31DAFB60900A8E28E /* Info.plist */,
 				78C3B9D11DAFD264000DACBF /* StoreInventory.json */,
 				7817F3BB1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld */,
+				785EBC1A1DB022C300F50455 /* images */,
 			);
 			path = CenkerDemirViaflyTestProject;
+			sourceTree = "<group>";
+		};
+		785EBC1A1DB022C300F50455 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				785EBC121DB022B000F50455 /* men.png */,
+				785EBC131DB022B000F50455 /* women.png */,
+				785EBC141DB022B000F50455 /* outwear.png */,
+				785EBC151DB022B000F50455 /* accessories.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +156,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785EBC181DB022B000F50455 /* outwear.png in Resources */,
 				7817F3C21DAFB60900A8E28E /* LaunchScreen.storyboard in Resources */,
 				7817F3BF1DAFB60900A8E28E /* Assets.xcassets in Resources */,
 				78C3B9D21DAFD264000DACBF /* StoreInventory.json in Resources */,
+				785EBC161DB022B000F50455 /* men.png in Resources */,
+				785EBC171DB022B000F50455 /* women.png in Resources */,
+				785EBC191DB022B000F50455 /* accessories.png in Resources */,
 				7817F3BA1DAFB60900A8E28E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

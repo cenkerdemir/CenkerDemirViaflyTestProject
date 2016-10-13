@@ -25,26 +25,31 @@ class Store {
             let jsonData = try Data(contentsOf: localURL, options: [])
             let itemsArray = try JSONSerialization.jsonObject(with:jsonData, options: []) as! [NSDictionary]
             
+            let queue = DispatchQueue.init(label: "com.Cenker.Demir.CenkerDemirViaflyTestProject")
             for eachItem in itemsArray {
-                let item = Item()
-                item.itemName = eachItem.value(forKey: "Item") as! String
-                item.systemID = eachItem.value(forKey: "System ID") as! Int
-                item.category = eachItem.value(forKey: "Category") as! String
-                item.codeUPC = eachItem.value(forKey: "UPC") as! Int
-                item.quantity = eachItem.value(forKey: "Qty.") as! Int
-                let priceAsAString = eachItem.value(forKey: "Price") as! String
-                if let price = Double(priceAsAString.replacingOccurrences(of: "$", with: "")) {
-                    item.price = price
-                }
-                items.append(item)
-            }
-            for item in items {
-                print(item.description())
+                queue.async(execute: { 
+                    let item = Item()
+                    item.itemName = eachItem.value(forKey: "Item") as! String
+                    item.systemID = eachItem.value(forKey: "System ID") as! Int
+                    item.category = eachItem.value(forKey: "Category") as! String
+                    item.codeUPC = eachItem.value(forKey: "UPC") as! Int
+                    item.quantity = eachItem.value(forKey: "Qty.") as! Int
+                    let priceAsAString = eachItem.value(forKey: "Price") as! String
+                    if let price = Double(priceAsAString.replacingOccurrences(of: "$", with: "")) {
+                        item.price = price
+                    }
+                    self.items.append(item)
+                })
             }
         }
         catch {
             print("could not get the data from the file")
         }
+
+//      uncomment to print out the items in the store
+//      for item in items {
+//          print(item.description())
+//      }
         
     }
     
