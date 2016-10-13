@@ -8,11 +8,15 @@
 
 import Foundation
 
-struct Item {
-    let systemID = IntMax()
-    let codeUPC = IntMax()
-    let itemName = String()
-    let quantity = Int()
-    let price = Double()
-    let category = String()
+class Item {
+    var systemID = Int()
+    var codeUPC = Int()
+    var itemName = String()
+    var quantity = Int()
+    var price = Double()
+    var category = String()
+    
+    public func description() -> String {
+        return "\(systemID) - \(codeUPC) - \(itemName) - \(quantity) - \(price) - \(category)"
+    }
 }
