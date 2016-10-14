@@ -10,21 +10,56 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var fullItemList: UITableView!
+    @IBOutlet weak var itemsTableView: UITableView!
     let store = Store.sharedInstance
+    var itemsList = [Item]()
+    var sortingStyle = "ascending"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
-        fullItemList.dataSource = self
+        
+        itemsList = store.items
+        
+        //assign self to data source
+        itemsTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //sort button tapped
+    @IBAction func sortTapped(_ sender: UIButton) {
+        if sortingStyle == "ascending" {
+            itemsList.sort(by: { (item1, item2) -> Bool in
+                if item1.price == item2.price {
+                    return item1.itemName < item2.itemName
+                }
+                else {
+                    return item1.price < item2.price
+                }
+            })
+            sortingStyle = "descending"
+        }
+        else {
+            itemsList.sort(by: { (item1, item2) -> Bool in
+                if item1.price == item2.price {
+                    return item1.itemName < item2.itemName
+                }
+                else {
+                    return item1.price > item2.price
+                }
+            })
+            sortingStyle = "ascending"
+        }
+        itemsTableView.reloadData()
+    }
+    
+    
+    //MARK: - TableView functions
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -35,26 +70,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
-        let item : Item = store.items[indexPath.row]
+        let item : Item = itemsList[indexPath.row]
         let key = item.itemName
         cell.textLabel?.text = key
         cell.detailTextLabel?.text = "$" + String(describing: item.price)
-        // below code can be uncommented to show images
-        switch item.category {
-        case "Men's":
-            cell.imageView?.image = UIImage(named: "men.png")
-            //cell.backgroundColor = UIColor.cyan
-        case "Women's":
-            cell.imageView?.image = UIImage(named: "women.png")
-            //cell.backgroundColor = UIColor.red
-        case "Outerwear":
-            cell.imageView?.image = UIImage(named: "outwear.png")
-            //cell.backgroundColor = UIColor.green
-        default:
-            cell.imageView?.image = UIImage(named: "accessories.png")
-            //cell.backgroundColor = UIColor.gray
-        }
+        
+        cell.imageView?.image = assignImageToCell(itemCategory: item.category)
         return cell
+    }
+    
+    //helper function to assign images to the cell
+    func assignImageToCell(itemCategory: String) -> UIImage? {
+        var imageName = String()
+        switch itemCategory {
+        case "Men's":
+            imageName = "men.png"
+        case "Women's":
+            imageName = "women.png"
+        case "Outerwear":
+            imageName = "outwear.png"
+        default:
+            imageName = "accessories.png"
+        }
+        return UIImage(named: imageName)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

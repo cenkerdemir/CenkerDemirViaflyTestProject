@@ -20,6 +20,9 @@
 		78C3B9D21DAFD264000DACBF /* StoreInventory.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C3B9D11DAFD264000DACBF /* StoreInventory.json */; };
 		78C3B9D41DAFD4BA000DACBF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3B9D31DAFD4BA000DACBF /* Item.swift */; };
 		78C3B9D61DAFD55A000DACBF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3B9D51DAFD55A000DACBF /* Store.swift */; };
+		78F717421DB05348004CA69B /* categories-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717411DB05348004CA69B /* categories-icon.png */; };
+		78F717441DB05732004CA69B /* sort-dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717431DB05732004CA69B /* sort-dollar.png */; };
+		78F717461DB068A0004CA69B /* Filter-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717451DB068A0004CA69B /* Filter-30.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		78C3B9D11DAFD264000DACBF /* StoreInventory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StoreInventory.json; sourceTree = "<group>"; };
 		78C3B9D31DAFD4BA000DACBF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		78C3B9D51DAFD55A000DACBF /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		78F717411DB05348004CA69B /* categories-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "categories-icon.png"; path = "images/categories-icon.png"; sourceTree = "<group>"; };
+		78F717431DB05732004CA69B /* sort-dollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sort-dollar.png"; path = "images/sort-dollar.png"; sourceTree = "<group>"; };
+		78F717451DB068A0004CA69B /* Filter-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filter-30.png"; path = "images/Filter-30.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 		785EBC1A1DB022C300F50455 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				78F717451DB068A0004CA69B /* Filter-30.png */,
+				78F717431DB05732004CA69B /* sort-dollar.png */,
+				78F717411DB05348004CA69B /* categories-icon.png */,
 				785EBC121DB022B000F50455 /* men.png */,
 				785EBC131DB022B000F50455 /* women.png */,
 				785EBC141DB022B000F50455 /* outwear.png */,
@@ -162,8 +171,11 @@
 				78C3B9D21DAFD264000DACBF /* StoreInventory.json in Resources */,
 				785EBC161DB022B000F50455 /* men.png in Resources */,
 				785EBC171DB022B000F50455 /* women.png in Resources */,
+				78F717461DB068A0004CA69B /* Filter-30.png in Resources */,
 				785EBC191DB022B000F50455 /* accessories.png in Resources */,
+				78F717441DB05732004CA69B /* sort-dollar.png in Resources */,
 				7817F3BA1DAFB60900A8E28E /* Main.storyboard in Resources */,
+				78F717421DB05348004CA69B /* categories-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +313,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X82JT57D2Y;
 				INFOPLIST_FILE = CenkerDemirViaflyTestProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Cenker.Demir.CenkerDemirViaflyTestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,6 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X82JT57D2Y;
 				INFOPLIST_FILE = CenkerDemirViaflyTestProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Cenker.Demir.CenkerDemirViaflyTestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";

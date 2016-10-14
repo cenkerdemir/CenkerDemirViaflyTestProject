@@ -19,28 +19,29 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4wI-9x-X2S">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4wI-9x-X2S">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="PoS-aa-7u4" detailTextLabel="UzD-tJ-yP4" style="IBUITableViewCellStyleSubtitle" id="vyV-yL-Mzk">
-                                        <rect key="frame" x="0.0" y="28" width="338" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="338" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="vyV-yL-Mzk" id="bnL-aF-dKU">
-                                            <frame key="frameInset" width="338" height="43"/>
+                                            <frame key="frameInset" width="338" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PoS-aa-7u4">
-                                                    <frame key="frameInset" minX="15" minY="7" width="25" height="15"/>
+                                                    <frame key="frameInset" minX="15" minY="30" width="28" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UzD-tJ-yP4">
-                                                    <frame key="frameInset" minX="15" minY="22" width="33" height="15"/>
+                                                    <frame key="frameInset" minX="15" minY="45" width="37" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -49,12 +50,13 @@
                                 </prototypes>
                             </tableView>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gD6-rh-bUg">
-                                <frame key="frameInset" minX="1" height="49" maxX="-1"/>
+                                <frame key="frameInset" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="p0W-mf-hrE"/>
-                                    <tabBarItem systemItem="more" id="p9g-pK-2AJ"/>
+                                    <tabBarItem title="Categories" image="categories-icon.png" id="p0W-mf-hrE"/>
+                                    <tabBarItem systemItem="search" id="p9g-pK-2AJ"/>
+                                    <tabBarItem title="In Stock" image="Filter-30.png" id="6XP-JF-i6W"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -68,19 +70,21 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="VIAFLY" id="N62-3m-7Kv">
-                        <barButtonItem key="rightBarButtonItem" id="wXk-Dj-ipJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Eca-Rf-bcA">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="fDa-m7-AJA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vii-fB-f0T">
+                                <rect key="frame" x="275" y="7" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Price ^">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title=" Sort" image="sort-dollar.png">
+                                    <color key="titleColor" red="0.085177951388888895" green="0.08642578125" blue="0.085313585069444448" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sortTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zzO-mu-wlE"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="fullItemList" destination="4wI-9x-X2S" id="aNu-fX-TbE"/>
+                        <outlet property="itemsTableView" destination="4wI-9x-X2S" id="gME-Bc-bt5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,6 +96,7 @@
             <objects>
                 <navigationController title="VIAFLY" automaticallyAdjustsScrollViewInsets="NO" id="kMx-Hq-zKZ" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4mt-L2-r9l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -106,4 +111,9 @@
             <point key="canvasLocation" x="4752.8000000000002" y="792.95352323838085"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Filter-30.png" width="30" height="30"/>
+        <image name="categories-icon.png" width="30" height="30"/>
+        <image name="sort-dollar.png" width="30" height="30"/>
+    </resources>
 </document>
