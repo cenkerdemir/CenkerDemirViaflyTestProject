@@ -12,8 +12,9 @@ class Store {
     static let sharedInstance = Store()
     
     var items = [Item]()
+    var categories = [String]()
     
-    func getItemsForTheStore () {
+    func getItemsForStore () {
         guard let filePath = Bundle.main.path(forResource: "StoreInventory", ofType: "json") else {
             print("\n\n\nerror occured while looking for the json file...\n\n\n")
             return
@@ -45,12 +46,19 @@ class Store {
         catch {
             print("could not get the data from the file")
         }
-
 //      uncomment to print out the items in the store
 //      for item in items {
 //          print(item.description())
 //      }
-        
     }
     
+    func getCategories() -> [String] {
+        var categorySet = Set<String>()
+        var categoryArray = ["All Items"]
+        for item in items {
+            categorySet.insert(item.category)
+        }
+        categoryArray.append(contentsOf: categorySet)
+        return categoryArray
+    }
 }
