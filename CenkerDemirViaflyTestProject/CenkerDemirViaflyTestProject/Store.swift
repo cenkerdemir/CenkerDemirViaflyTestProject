@@ -14,7 +14,8 @@ class Store {
     var items = [Item]()
     var categories = [String]()
     
-    func getItemsForStore () {
+    func getItemsForStore (categoryToGet: String) {
+        items.removeAll()
         guard let filePath = Bundle.main.path(forResource: "StoreInventory", ofType: "json") else {
             print("\n\n\nerror occured while looking for the json file...\n\n\n")
             return
@@ -28,7 +29,7 @@ class Store {
             
             let queue = DispatchQueue.init(label: "com.Cenker.Demir.CenkerDemirViaflyTestProject")
             for eachItem in itemsArray {
-                queue.async(execute: { 
+                queue.sync(execute: {
                     let item = Item()
                     item.itemName = eachItem.value(forKey: "Item") as! String
                     item.systemID = eachItem.value(forKey: "System ID") as! Int
@@ -42,23 +43,34 @@ class Store {
                     self.items.append(item)
                 })
             }
+            if categoryToGet != "" && getCategories().contains(categoryToGet) == true {
+                let filteredItems = items.filter({ (item) -> Bool in
+                    return item.category == categoryToGet
+                })
+                items = filteredItems
+            }
         }
         catch {
             print("could not get the data from the file")
         }
-//      uncomment to print out the items in the store
+    //  uncomment to print out the items in the store
 //      for item in items {
 //          print(item.description())
 //      }
+      print(items.count)
     }
     
     func getCategories() -> [String] {
-        var categorySet = Set<String>()
-        var categoryArray = ["All Items"]
+        var categoryArray = [String]()
         for item in items {
-            categorySet.insert(item.category)
+            if !categoryArray.contains(item.category) {
+                categoryArray.append(item.category)
+            }
+            print(item.category)
         }
-        categoryArray.append(contentsOf: categorySet)
+        for c in categoryArray {
+            print(" category: \(c)")
+        }
         return categoryArray
     }
 }

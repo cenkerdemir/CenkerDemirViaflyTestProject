@@ -23,14 +23,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view, typically from a nib.
         
         //create a local array to store the list of the items in the store
-        if categoryNameToShow == "" || categoryNameToShow == "All Items" {
-            itemsList = store.items
-        }
-        else {
-            itemsList = store.items.filter({ (item) -> Bool in
-                return item.category == categoryNameToShow
-            })
-        }
+        store.getItemsForStore(categoryToGet: categoryNameToShow)
+        itemsList = store.items
         
         //assign self to data source
         itemsTableView.dataSource = self
@@ -109,10 +103,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             imageName = "accessories.png"
         }
         return imageName
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
     
 }

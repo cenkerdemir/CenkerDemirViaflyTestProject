@@ -21,6 +21,7 @@ class SideBarViewController: UIViewController, UITableViewDelegate, UITableViewD
         //assign self to datasource
         sideBarTableView.dataSource = self
         menuSelections = store.getCategories()
+        menuSelections.insert("All Items", at: 0)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,12 +64,14 @@ class SideBarViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "itemListSegue" {
-            let destVC = segue.destination as? MainViewController
+            let navigationController = segue.destination
+            let destVC = navigationController.childViewControllers.first as! MainViewController
             guard let indexPath : IndexPath = sideBarTableView.indexPathForSelectedRow else {
                 print("could not get the index path")
                 return
             }
-            destVC?.categoryNameToShow = menuSelections[indexPath.row]
+            destVC.categoryNameToShow = menuSelections[indexPath.row]
+            print(menuSelections[indexPath.row])
         }
         
     }
