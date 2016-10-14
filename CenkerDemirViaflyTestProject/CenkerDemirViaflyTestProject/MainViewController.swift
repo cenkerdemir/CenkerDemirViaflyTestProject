@@ -8,21 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var itemsTableView: UITableView!
     let store = Store.sharedInstance
     var itemsList = [Item]()
     var sortingStyle = "ascending"
     
+    @IBOutlet weak var categoriesButtonForSideBar: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //create a local array to store the list of the items in the store
         itemsList = store.items
         
         //assign self to data source
         itemsTableView.dataSource = self
+        
+        if self.revealViewController() != nil {
+            categoriesButtonForSideBar.target = self.revealViewController()
+            categoriesButtonForSideBar.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +83,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let key = item.itemName
         cell.textLabel?.text = key
         cell.detailTextLabel?.text = "$" + String(describing: item.price)
-        
         cell.imageView?.image = assignImageToCell(itemCategory: item.category)
         return cell
     }
