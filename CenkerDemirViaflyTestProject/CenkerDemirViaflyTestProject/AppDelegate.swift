@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let store = Store.sharedInstance
         
-        store.getItemsForTheStore()
+        store.getItemsForStore()
         
         return true
     }

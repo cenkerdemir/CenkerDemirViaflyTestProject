@@ -14,6 +14,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     let store = Store.sharedInstance
     var itemsList = [Item]()
     var sortingStyle = "ascending"
+    var categoryNameToShow = String()
     
     @IBOutlet weak var categoriesButtonForSideBar: UIBarButtonItem!
     
@@ -22,7 +23,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view, typically from a nib.
         
         //create a local array to store the list of the items in the store
-        itemsList = store.items
+        if categoryNameToShow == "" || categoryNameToShow == "All Items" {
+            itemsList = store.items
+        }
+        else {
+            itemsList = store.items.filter({ (item) -> Bool in
+                return item.category == categoryNameToShow
+            })
+        }
         
         //assign self to data source
         itemsTableView.dataSource = self
@@ -83,12 +91,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let key = item.itemName
         cell.textLabel?.text = key
         cell.detailTextLabel?.text = "$" + String(describing: item.price)
-        cell.imageView?.image = assignImageToCell(itemCategory: item.category)
+        cell.imageView?.image = UIImage(named: assignImageToCell(itemCategory: item.category))
         return cell
     }
     
     //helper function to assign images to the cell
-    func assignImageToCell(itemCategory: String) -> UIImage? {
+    func assignImageToCell(itemCategory: String) -> String {
         var imageName = String()
         switch itemCategory {
         case "Men's":
@@ -100,7 +108,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         default:
             imageName = "accessories.png"
         }
-        return UIImage(named: imageName)
+        return imageName
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

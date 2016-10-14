@@ -10,7 +10,6 @@
 		7817F3B51DAFB60900A8E28E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817F3B41DAFB60900A8E28E /* AppDelegate.swift */; };
 		7817F3B71DAFB60900A8E28E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817F3B61DAFB60900A8E28E /* MainViewController.swift */; };
 		7817F3BA1DAFB60900A8E28E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7817F3B81DAFB60900A8E28E /* Main.storyboard */; };
-		7817F3BD1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7817F3BB1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld */; };
 		7817F3BF1DAFB60900A8E28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7817F3BE1DAFB60900A8E28E /* Assets.xcassets */; };
 		7817F3C21DAFB60900A8E28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7817F3C01DAFB60900A8E28E /* LaunchScreen.storyboard */; };
 		785EBC161DB022B000F50455 /* men.png in Resources */ = {isa = PBXBuildFile; fileRef = 785EBC121DB022B000F50455 /* men.png */; };
@@ -24,7 +23,8 @@
 		78F717441DB05732004CA69B /* sort-dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717431DB05732004CA69B /* sort-dollar.png */; };
 		78F717461DB068A0004CA69B /* Filter-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717451DB068A0004CA69B /* Filter-30.png */; };
 		78F7174A1DB0EE0A004CA69B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F717491DB0EE0A004CA69B /* SWRevealViewController.m */; };
-		78F7174D1DB108A0004CA69B /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7174C1DB108A0004CA69B /* SideBarTableViewController.swift */; };
+		78F7174F1DB112A7004CA69B /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7174E1DB112A7004CA69B /* SideBarViewController.swift */; };
+		78F717511DB122CF004CA69B /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717501DB122CF004CA69B /* empty.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		7817F3B41DAFB60900A8E28E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7817F3B61DAFB60900A8E28E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7817F3B91DAFB60900A8E28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7817F3BC1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CenkerDemirViaflyTestProject.xcdatamodel; sourceTree = "<group>"; };
 		7817F3BE1DAFB60900A8E28E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7817F3C11DAFB60900A8E28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7817F3C31DAFB60900A8E28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,7 +48,8 @@
 		78F717471DB0EE0A004CA69B /* CenkerDemirViaflyTestProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CenkerDemirViaflyTestProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		78F717481DB0EE0A004CA69B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		78F717491DB0EE0A004CA69B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		78F7174C1DB108A0004CA69B /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
+		78F7174E1DB112A7004CA69B /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
+		78F717501DB122CF004CA69B /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty.png; path = images/empty.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 			children = (
 				7817F3B41DAFB60900A8E28E /* AppDelegate.swift */,
 				7817F3B61DAFB60900A8E28E /* MainViewController.swift */,
-				78F7174C1DB108A0004CA69B /* SideBarTableViewController.swift */,
+				78F7174E1DB112A7004CA69B /* SideBarViewController.swift */,
 				78C3B9D51DAFD55A000DACBF /* Store.swift */,
 				78C3B9D31DAFD4BA000DACBF /* Item.swift */,
 				7817F3B81DAFB60900A8E28E /* Main.storyboard */,
@@ -94,7 +94,6 @@
 				78C3B9D11DAFD264000DACBF /* StoreInventory.json */,
 				785EBC1A1DB022C300F50455 /* images */,
 				78F7174B1DB0EE38004CA69B /* SWRevealViewController */,
-				7817F3BB1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld */,
 			);
 			path = CenkerDemirViaflyTestProject;
 			sourceTree = "<group>";
@@ -102,6 +101,7 @@
 		785EBC1A1DB022C300F50455 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				78F717501DB122CF004CA69B /* empty.png */,
 				78F717451DB068A0004CA69B /* Filter-30.png */,
 				78F717431DB05732004CA69B /* sort-dollar.png */,
 				78F717411DB05348004CA69B /* categories-icon.png */,
@@ -195,6 +195,7 @@
 				78F717441DB05732004CA69B /* sort-dollar.png in Resources */,
 				7817F3BA1DAFB60900A8E28E /* Main.storyboard in Resources */,
 				78F717421DB05348004CA69B /* categories-icon.png in Resources */,
+				78F717511DB122CF004CA69B /* empty.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,11 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78F7174D1DB108A0004CA69B /* SideBarTableViewController.swift in Sources */,
 				78C3B9D61DAFD55A000DACBF /* Store.swift in Sources */,
 				78C3B9D41DAFD4BA000DACBF /* Item.swift in Sources */,
+				78F7174F1DB112A7004CA69B /* SideBarViewController.swift in Sources */,
 				7817F3B71DAFB60900A8E28E /* MainViewController.swift in Sources */,
-				7817F3BD1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld in Sources */,
 				7817F3B51DAFB60900A8E28E /* AppDelegate.swift in Sources */,
 				78F7174A1DB0EE0A004CA69B /* SWRevealViewController.m in Sources */,
 			);
@@ -383,19 +383,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7817F3BB1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7817F3BC1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodel */,
-			);
-			currentVersion = 7817F3BC1DAFB60900A8E28E /* CenkerDemirViaflyTestProject.xcdatamodel */;
-			path = CenkerDemirViaflyTestProject.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7817F3A91DAFB60800A8E28E /* Project object */;
 }
