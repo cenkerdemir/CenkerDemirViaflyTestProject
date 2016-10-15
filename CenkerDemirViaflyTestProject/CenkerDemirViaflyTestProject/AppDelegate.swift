@@ -32,8 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-// a UIColor extension for nicer colors
+// a UIColor extension for extra colors
 extension UIColor {
+    
     static func viaflyBlue() -> UIColor {
         return UIColor(red: 63.0/255.0, green: 143.0/255.0, blue: 168.0/255.0, alpha: 1.0)
     }
@@ -41,5 +42,6 @@ extension UIColor {
     static func inStockDarkGreen() -> UIColor {
         return UIColor(red: 12.0/255.0, green: 140.0/255.0, blue: 91.0/255.0, alpha: 1.0)
     }
+
 }
 

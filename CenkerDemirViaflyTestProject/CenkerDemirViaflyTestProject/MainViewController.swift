@@ -151,7 +151,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 //MARK: - MainVC extensions
 
-// MainVC Class extension for the search bar delegate protocol
 extension MainViewController : UISearchBarDelegate {
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredItemList = itemsList.filter({ (item) -> Bool in
@@ -161,7 +160,6 @@ extension MainViewController : UISearchBarDelegate {
     }
 }
 
-// MainVC class extension for the search resultsupdating protocol
 extension MainViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
