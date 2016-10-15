@@ -124,7 +124,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let key = item.itemName
         cell.textLabel?.text = key
         let inStockString = item.isItemInStock() ? "in stock" : "out of stock"
-        cell.detailTextLabel?.text = "$" + String(describing: item.price) + "\t\t" + inStockString
+        let priceString = String(format: item.price == floor(item.price) ? "%.0f" : "%.2f", item.price)
+        cell.detailTextLabel?.text = "$" + priceString + "\t\t" + inStockString
         cell.detailTextLabel?.textColor = item.isItemInStock() ? UIColor.inStockDarkGreen() : UIColor.red
         cell.imageView?.image = UIImage(named: assignImageToCell(itemCategory: item.category))
         return cell
