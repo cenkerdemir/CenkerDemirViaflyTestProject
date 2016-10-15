@@ -13,10 +13,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var itemsTableView: UITableView!
     let store = Store.sharedInstance
     var itemsList = [Item]()
+    var filteredItemList = [Item]()
     var sortingStyle = "ascending"
     var categoryNameToShow = String()
     
     @IBOutlet weak var categoriesButtonForSideBar: UIBarButtonItem!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +34,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         //assign self to data source
         itemsTableView.dataSource = self
         
+        //set up the side bar
         if self.revealViewController() != nil {
             categoriesButtonForSideBar.target = self.revealViewController()
             categoriesButtonForSideBar.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        //searchController.searchBar =
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        itemsTableView.tableHeaderView = searchController.searchBar
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,6 +80,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         itemsTableView.reloadData()
     }
     
+    // in-stock filtering button tapped
+    @IBAction func inStockFilterButtonTapped(_ sender: UIButton) {
+        print("in stock filtering button tapped")
+        let inStockList = itemsList.filter { (item) -> Bool in
+            return item.quantity > 0
+        }
+        itemsList = inStockList
+        itemsTableView.reloadData()
+    }
     
     //MARK: - TableView functions
     
@@ -76,17 +97,33 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return store.items.count
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredItemList.count
+        }
+        return itemsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
-        let item : Item = itemsList[indexPath.row]
+        var item = Item()
+        if searchController.isActive && searchController.searchBar.text != "" {
+            item = filteredItemList[indexPath.row]
+        }
+        else {
+            item = itemsList[indexPath.row]
+        }
+        
         let key = item.itemName
         cell.textLabel?.text = key
-        cell.detailTextLabel?.text = "$" + String(describing: item.price)
+        let inStock : String = isItemInStock(quantity: item.quantity) ? "in stock" : "out of stock"
+        cell.detailTextLabel?.text = "$" + String(describing: item.price) + "\t\t" + inStock
+        cell.detailTextLabel?.textColor = isItemInStock(quantity: item.quantity) ? UIColor.inStockDarkGreen() : UIColor.red
         cell.imageView?.image = UIImage(named: assignImageToCell(itemCategory: item.category))
         return cell
+    }
+    
+    func isItemInStock(quantity: Int) -> Bool {
+        return quantity > 0
     }
     
     //helper function to assign images to the cell
@@ -105,5 +142,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return imageName
     }
     
+}
+
+
+extension MainViewController : UISearchBarDelegate {
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredItemList = itemsList.filter({ (item) -> Bool in
+            return item.itemName.lowercased().contains(searchText.lowercased())
+        })
+        itemsTableView.reloadData()
+    }
+}
+
+
+extension MainViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }
 

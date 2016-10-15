@@ -3966,5 +3966,14 @@
     "Qty.": 4,
     "Price": "$105.00",
     "Category": "Women's"
-  }
+  },
+ {
+ "System ID": 210000000000,
+ "UPC": 840887000000,
+ "Item": "OUT OF STOCK PRODUCT",
+ "Qty.": 0,
+ "Price": "$1005.00",
+ "Category": "Outerwear"
+ }
+
 ]
