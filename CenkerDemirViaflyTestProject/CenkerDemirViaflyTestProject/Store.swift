@@ -14,6 +14,7 @@ class Store {
     var items = [Item]()
     var categories = [String]()
     
+    // function to create a store array that has the store items in it, request of the items array comes with a category. it is either empty or a valid string
     func getItemsForStore (categoryToGet: String) {
         items.removeAll()
         guard let filePath = Bundle.main.path(forResource: "StoreInventory", ofType: "json") else {
@@ -43,33 +44,30 @@ class Store {
                     self.items.append(item)
                 })
             }
-            if categoryToGet != "" && getCategories().contains(categoryToGet) == true {
-                let filteredItems = items.filter({ (item) -> Bool in
-                    return item.category == categoryToGet
-                })
-                items = filteredItems
-            }
+            filterItems(categoryToGet: categoryToGet)
         }
         catch {
             print("could not get the data from the file")
         }
-    //  uncomment to print out the items in the store
-//      for item in items {
-//          print(item.description())
-//      }
-      print(items.count)
     }
     
+    // function to filter items based on the category.
+    func filterItems(categoryToGet: String) {
+        if categoryToGet != "" && getCategories().contains(categoryToGet) == true {
+            let filteredItems = items.filter({ (item) -> Bool in
+                return item.category == categoryToGet
+            })
+            items = filteredItems
+        }
+    }
+    
+    // function to get the categories from the data file
     func getCategories() -> [String] {
         var categoryArray = [String]()
         for item in items {
             if !categoryArray.contains(item.category) {
                 categoryArray.append(item.category)
             }
-            print(item.category)
-        }
-        for c in categoryArray {
-            print(" category: \(c)")
         }
         return categoryArray
     }

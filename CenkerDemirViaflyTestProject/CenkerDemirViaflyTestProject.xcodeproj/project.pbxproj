@@ -26,7 +26,7 @@
 		78F717511DB122CF004CA69B /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717501DB122CF004CA69B /* empty.png */; };
 		78F717531DB1A5E5004CA69B /* GoldBarsFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717521DB1A5E5004CA69B /* GoldBarsFilled.png */; };
 		78F7175D1DB1A90B004CA69B /* sort-dollar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F7175C1DB1A90B004CA69B /* sort-dollar2.png */; };
-		78F7175E1DB1A9EE004CA69B /* sort-dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F7175A1DB1A8A2004CA69B /* sort-dollar.png */; };
+		78F717601DB1AB14004CA69B /* sort-dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F7175F1DB1AB14004CA69B /* sort-dollar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +52,8 @@
 		78F7174E1DB112A7004CA69B /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 		78F717501DB122CF004CA69B /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty.png; path = images/empty.png; sourceTree = "<group>"; };
 		78F717521DB1A5E5004CA69B /* GoldBarsFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoldBarsFilled.png; path = images/GoldBarsFilled.png; sourceTree = "<group>"; };
-		78F7175A1DB1A8A2004CA69B /* sort-dollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sort-dollar.png"; path = "images/sort-dollar.png"; sourceTree = "<group>"; };
 		78F7175C1DB1A90B004CA69B /* sort-dollar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sort-dollar2.png"; path = "images/sort-dollar2.png"; sourceTree = "<group>"; };
+		78F7175F1DB1AB14004CA69B /* sort-dollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sort-dollar.png"; path = "images/sort-dollar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				78F7175C1DB1A90B004CA69B /* sort-dollar2.png */,
-				78F7175A1DB1A8A2004CA69B /* sort-dollar.png */,
+				78F7175F1DB1AB14004CA69B /* sort-dollar.png */,
 				78F717521DB1A5E5004CA69B /* GoldBarsFilled.png */,
 				78F717501DB122CF004CA69B /* empty.png */,
 				78F717451DB068A0004CA69B /* Filter-30.png */,
@@ -203,7 +203,7 @@
 				7817F3BA1DAFB60900A8E28E /* Main.storyboard in Resources */,
 				78F717421DB05348004CA69B /* categories-icon.png in Resources */,
 				78F717511DB122CF004CA69B /* empty.png in Resources */,
-				78F7175E1DB1A9EE004CA69B /* sort-dollar.png in Resources */,
+				78F717601DB1AB14004CA69B /* sort-dollar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

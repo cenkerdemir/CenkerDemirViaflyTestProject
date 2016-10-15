@@ -14,12 +14,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     let store = Store.sharedInstance
     var itemsList = [Item]()
     var filteredItemList = [Item]()
-    var sortingStyle = "ascending"
+    var sortingStyleAscending : Bool = true
+    var inStockOnly : Bool = true
     var categoryNameToShow = String()
     
     @IBOutlet weak var categoriesButtonForSideBar: UIBarButtonItem!
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    //@IBOutlet weak var searchBar: UISearchBar!
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -40,7 +41,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             categoriesButtonForSideBar.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        //searchController.searchBar =
+        
+        //set up the search bar and the delegate
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -54,8 +56,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     //sort button tapped
-    @IBAction func sortTapped(_ sender: UIButton) {
-        if sortingStyle == "ascending" {
+    @IBAction func sortButtonTapped(_ sender: AnyObject) {
+        if sortingStyleAscending == true {
             itemsList.sort(by: { (item1, item2) -> Bool in
                 if item1.price == item2.price {
                     return item1.itemName < item2.itemName
@@ -64,7 +66,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     return item1.price < item2.price
                 }
             })
-            sortingStyle = "descending"
+            sortingStyleAscending = false
         }
         else {
             itemsList.sort(by: { (item1, item2) -> Bool in
@@ -75,22 +77,28 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     return item1.price > item2.price
                 }
             })
-            sortingStyle = "ascending"
+            sortingStyleAscending = true
         }
         itemsTableView.reloadData()
     }
     
     // in-stock filtering button tapped
-    @IBAction func inStockFilterButtonTapped(_ sender: UIButton) {
-        print("in stock filtering button tapped")
-        let inStockList = itemsList.filter { (item) -> Bool in
-            return item.quantity > 0
+    @IBAction func inStockFilterButtonTapped(_ sender: UIBarButtonItem) {
+        switch inStockOnly {
+        case true:
+            let inStockList = itemsList.filter { (item) -> Bool in
+                return item.quantity > 0
+            }
+            itemsList = inStockList
+            inStockOnly = false
+        case false:
+            itemsList = store.items
+            inStockOnly = true
         }
-        itemsList = inStockList
         itemsTableView.reloadData()
     }
     
-    //MARK: - TableView functions
+//MARK: - TableView functions
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -115,15 +123,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let key = item.itemName
         cell.textLabel?.text = key
-        let inStock : String = isItemInStock(quantity: item.quantity) ? "in stock" : "out of stock"
-        cell.detailTextLabel?.text = "$" + String(describing: item.price) + "\t\t" + inStock
-        cell.detailTextLabel?.textColor = isItemInStock(quantity: item.quantity) ? UIColor.inStockDarkGreen() : UIColor.red
+        let inStockString = item.isItemInStock() ? "in stock" : "out of stock"
+        cell.detailTextLabel?.text = "$" + String(describing: item.price) + "\t\t" + inStockString
+        cell.detailTextLabel?.textColor = item.isItemInStock() ? UIColor.inStockDarkGreen() : UIColor.red
         cell.imageView?.image = UIImage(named: assignImageToCell(itemCategory: item.category))
         return cell
-    }
-    
-    func isItemInStock(quantity: Int) -> Bool {
-        return quantity > 0
     }
     
     //helper function to assign images to the cell
@@ -144,7 +148,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 }
 
+//MARK: - MainVC extensions
 
+// MainVC Class extension for the search bar delegate protocol
 extension MainViewController : UISearchBarDelegate {
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredItemList = itemsList.filter({ (item) -> Bool in
@@ -154,7 +160,7 @@ extension MainViewController : UISearchBarDelegate {
     }
 }
 
-
+// MainVC class extension for the search resultsupdating protocol
 extension MainViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)

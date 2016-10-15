@@ -67,9 +67,15 @@
                         <rightBarButtonItems>
                             <barButtonItem image="GoldBarsFilled.png" id="48c-MN-hX6">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="inStockFilterButtonTapped:" destination="BYZ-38-t0r" id="BMd-Yz-dxY"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="sort-dollar2.png" id="H46-HQ-Kix">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sortButtonTapped:" destination="BYZ-38-t0r" id="SAC-0W-9Cg"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -122,12 +128,21 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sideBarCell" id="5qZ-XI-Ltq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sideBarCell" textLabel="e6v-Hx-crm" style="IBUITableViewCellStyleDefault" id="5qZ-XI-Ltq">
                                         <rect key="frame" x="0.0" y="28" width="239" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5qZ-XI-Ltq" id="4et-IL-OHg">
                                             <frame key="frameInset" width="239" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e6v-Hx-crm">
+                                                    <frame key="frameInset" minX="15" width="209" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.085177951390000006" green="0.08642578125" blue="0.085313585070000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="kMx-Hq-zKZ" kind="custom" identifier="itemListSegue" customClass="SWRevealViewControllerSeguePushController" id="JQ6-4w-e2x"/>
@@ -139,7 +154,7 @@
                                 <frame key="frameInset" minX="16" minY="56" width="239" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
