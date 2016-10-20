@@ -20,6 +20,7 @@
 		78C3B9D21DAFD264000DACBF /* StoreInventory.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C3B9D11DAFD264000DACBF /* StoreInventory.json */; };
 		78C3B9D41DAFD4BA000DACBF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3B9D31DAFD4BA000DACBF /* Item.swift */; };
 		78C3B9D61DAFD55A000DACBF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3B9D51DAFD55A000DACBF /* Store.swift */; };
+		78E05E771DB981C2006042BA /* Barcode-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E05E761DB981C2006042BA /* Barcode-25.png */; };
 		78F717421DB05348004CA69B /* categories-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717411DB05348004CA69B /* categories-icon.png */; };
 		78F717461DB068A0004CA69B /* Filter-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F717451DB068A0004CA69B /* Filter-30.png */; };
 		78F7174A1DB0EE0A004CA69B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F717491DB0EE0A004CA69B /* SWRevealViewController.m */; };
@@ -46,6 +47,7 @@
 		78C3B9D11DAFD264000DACBF /* StoreInventory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StoreInventory.json; sourceTree = "<group>"; };
 		78C3B9D31DAFD4BA000DACBF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		78C3B9D51DAFD55A000DACBF /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		78E05E761DB981C2006042BA /* Barcode-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Barcode-25.png"; path = "images/Barcode-25.png"; sourceTree = "<group>"; };
 		78F717411DB05348004CA69B /* categories-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "categories-icon.png"; path = "images/categories-icon.png"; sourceTree = "<group>"; };
 		78F717451DB068A0004CA69B /* Filter-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filter-30.png"; path = "images/Filter-30.png"; sourceTree = "<group>"; };
 		78F717471DB0EE0A004CA69B /* CenkerDemirViaflyTestProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CenkerDemirViaflyTestProject-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		785EBC1A1DB022C300F50455 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				78E05E761DB981C2006042BA /* Barcode-25.png */,
 				78F7175C1DB1A90B004CA69B /* sort-dollar2.png */,
 				78F7175F1DB1AB14004CA69B /* sort-dollar.png */,
 				78F717521DB1A5E5004CA69B /* GoldBarsFilled.png */,
@@ -217,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E05E771DB981C2006042BA /* Barcode-25.png in Resources */,
 				785EBC181DB022B000F50455 /* outwear.png in Resources */,
 				7817F3C21DAFB60900A8E28E /* LaunchScreen.storyboard in Resources */,
 				7817F3BF1DAFB60900A8E28E /* Assets.xcassets in Resources */,
