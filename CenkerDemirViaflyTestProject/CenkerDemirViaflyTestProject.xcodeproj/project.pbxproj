@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0CA54875BA94129FFCE938 /* Pods_CenkerDemirViaflyTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C2785BD4AFD004A1378ABD /* Pods_CenkerDemirViaflyTestProject.framework */; };
 		7817F3B51DAFB60900A8E28E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817F3B41DAFB60900A8E28E /* AppDelegate.swift */; };
 		7817F3B71DAFB60900A8E28E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817F3B61DAFB60900A8E28E /* MainViewController.swift */; };
 		7817F3BA1DAFB60900A8E28E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7817F3B81DAFB60900A8E28E /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58933D383A2DC16E1D032F8D /* Pods-CenkerDemirViaflyTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CenkerDemirViaflyTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CenkerDemirViaflyTestProject/Pods-CenkerDemirViaflyTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7817F3B11DAFB60900A8E28E /* CenkerDemirViaflyTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CenkerDemirViaflyTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7817F3B41DAFB60900A8E28E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7817F3B61DAFB60900A8E28E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 		78F717521DB1A5E5004CA69B /* GoldBarsFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoldBarsFilled.png; path = images/GoldBarsFilled.png; sourceTree = "<group>"; };
 		78F7175C1DB1A90B004CA69B /* sort-dollar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sort-dollar2.png"; path = "images/sort-dollar2.png"; sourceTree = "<group>"; };
 		78F7175F1DB1AB14004CA69B /* sort-dollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sort-dollar.png"; path = "images/sort-dollar.png"; sourceTree = "<group>"; };
+		A7C2785BD4AFD004A1378ABD /* Pods_CenkerDemirViaflyTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CenkerDemirViaflyTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C1364AA73EBB39E56301E2 /* Pods-CenkerDemirViaflyTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CenkerDemirViaflyTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-CenkerDemirViaflyTestProject/Pods-CenkerDemirViaflyTestProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +65,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0CA54875BA94129FFCE938 /* Pods_CenkerDemirViaflyTestProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3751EB84342203E1D5D901BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7C2785BD4AFD004A1378ABD /* Pods_CenkerDemirViaflyTestProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7817F3A81DAFB60800A8E28E = {
 			isa = PBXGroup;
 			children = (
 				7817F3B31DAFB60900A8E28E /* CenkerDemirViaflyTestProject */,
 				7817F3B21DAFB60900A8E28E /* Products */,
+				AEDD0C02E4F69F6AECD27797 /* Pods */,
+				3751EB84342203E1D5D901BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,11 +137,20 @@
 		78F7174B1DB0EE38004CA69B /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
+				78F717471DB0EE0A004CA69B /* CenkerDemirViaflyTestProject-Bridging-Header.h */,
 				78F717481DB0EE0A004CA69B /* SWRevealViewController.h */,
 				78F717491DB0EE0A004CA69B /* SWRevealViewController.m */,
-				78F717471DB0EE0A004CA69B /* CenkerDemirViaflyTestProject-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		AEDD0C02E4F69F6AECD27797 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58933D383A2DC16E1D032F8D /* Pods-CenkerDemirViaflyTestProject.debug.xcconfig */,
+				E3C1364AA73EBB39E56301E2 /* Pods-CenkerDemirViaflyTestProject.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7817F3C61DAFB60900A8E28E /* Build configuration list for PBXNativeTarget "CenkerDemirViaflyTestProject" */;
 			buildPhases = (
+				296DDFC5C951BBB9176C8DF1 /* [CP] Check Pods Manifest.lock */,
 				7817F3AD1DAFB60800A8E28E /* Sources */,
 				7817F3AE1DAFB60800A8E28E /* Frameworks */,
 				7817F3AF1DAFB60800A8E28E /* Resources */,
+				5D5604360AD3DFDAC3EFB7B3 /* [CP] Embed Pods Frameworks */,
+				F08AD037E048B5588EA2B428 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,6 +235,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		296DDFC5C951BBB9176C8DF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5D5604360AD3DFDAC3EFB7B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CenkerDemirViaflyTestProject/Pods-CenkerDemirViaflyTestProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F08AD037E048B5588EA2B428 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CenkerDemirViaflyTestProject/Pods-CenkerDemirViaflyTestProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7817F3AD1DAFB60800A8E28E /* Sources */ = {
@@ -338,6 +413,7 @@
 		};
 		7817F3C71DAFB60900A8E28E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58933D383A2DC16E1D032F8D /* Pods-CenkerDemirViaflyTestProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -355,6 +431,7 @@
 		};
 		7817F3C81DAFB60900A8E28E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C1364AA73EBB39E56301E2 /* Pods-CenkerDemirViaflyTestProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

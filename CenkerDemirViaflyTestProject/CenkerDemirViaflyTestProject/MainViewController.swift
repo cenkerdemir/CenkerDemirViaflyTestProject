@@ -48,6 +48,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         itemsTableView.tableHeaderView = searchController.searchBar
+        
     }
 
     override func didReceiveMemoryWarning() {

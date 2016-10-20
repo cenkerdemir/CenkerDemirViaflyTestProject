@@ -1,0 +1,12 @@
+PODS:
+  - BarcodeScanner (2.0.0)
+
+DEPENDENCIES:
+  - BarcodeScanner
+
+SPEC CHECKSUMS:
+  BarcodeScanner: 266ab4b479d407b74bc4b473fa5020b4523ad9e3
+
+PODFILE CHECKSUM: 0a259f86ffa05a5c7c10d98b52d46fc20afcfec2
+
+COCOAPODS: 1.0.1
